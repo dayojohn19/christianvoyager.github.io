@@ -1,7 +1,9 @@
 console.log("\n Starting Index.js...\n\n");
 csrftoken = `{{csrf_token}}`;
 bloggerID = 23;
-fetch(`http://127.0.0.1:8000/apis/getBlogger/${bloggerID}`, {
+main_website = "https://www.treep.today";
+local_site = "http://127.0.0.1:8000";
+fetch(`${main_website}/apis/getBlogger/${bloggerID}`, {
   headers: { "X-CSRFToken": csrftoken, Accept: "application/json", "Content-Type": "application/json" },
   method: "GET",
 })
@@ -15,7 +17,7 @@ fetch(`http://127.0.0.1:8000/apis/getBlogger/${bloggerID}`, {
     document.querySelector("#profile_title").innerHTML = blog.shortsay;
   });
 
-fetch(`http://127.0.0.1:8000/apis/blogsItem/${bloggerID}`, {
+fetch(`${main_website}/apis/blogsItem/${bloggerID}`, {
   headers: { "X-CSRFToken": csrftoken, Accept: "application/json", "Content-Type": "application/json" },
   method: "GET",
 })
