@@ -1,0 +1,55 @@
+#profile_container {
+  position: relative;
+  background-color: rgb(232, 232, 232);
+  height: 80vh;
+}
+.profile_container_item {
+  padding: 15px;
+  position: absolute;
+}
+#profile_image {
+  top: 10%;
+  left: 45%;
+  width: 40vw;
+  height: 40vw;
+  /* background-color: rgb(169, 192, 246); */
+  z-index: 1;
+  background-image: url("src/images/chicken_Group.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#profile_title {
+  top: 12%;
+  left: 10%;
+  width: fit-content;
+  z-index: 2;
+  font-size: 3vh;
+  max-width: 50vw;
+}
+#profile_about {
+  z-index: 2;
+  max-width: 40vw;
+  top: 33%;
+  left: 5%;
+  font-size: 2.5vw;
+}
+
+.title-header {
+  margin: 1vw;
+  padding: 0;
+}
+.sub-section-two {
+  width: 100vw;
+  height: 50vh;
+  /* background-color: red; */
+  position: relative;
+}
+.custom-shape-divider-bottom {
+  bottom: 0;
+  left: 0;
+}
+.sub-section-two-a {
+  /* background-color: blue; */
+  height: 10vh;
+}
