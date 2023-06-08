@@ -1,8 +1,8 @@
 console.log("\n Starting Index.js...\n\n");
 csrftoken = `{{csrf_token}}`;
-bloggerID = 23;
-local_site = "https://www.treep.today";
-// local_site = "http://127.0.0.1:8000";
+bloggerID = 24;
+// local_site = "https://www.treep.today";
+local_site = "http://127.0.0.1:8000";
 fetch(`${local_site}/apis/getBlogger/${bloggerID}`, {
   headers: { "X-CSRFToken": csrftoken, Accept: "application/json", "Content-Type": "application/json" },
   method: "GET",
