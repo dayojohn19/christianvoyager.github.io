@@ -52,6 +52,8 @@ body {
   background-blend-mode: overlay;
   transition: background-color 300ms ease 0ms, background-image 300ms ease 0ms;
   z-index: 3;
+  /* max-width: 150px !important;
+  max-height: 150px !important; */
 }
 .item_inside_container:hover {
   background-color: #504f4f;
