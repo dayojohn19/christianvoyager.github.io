@@ -10,15 +10,17 @@
 #profile_image {
   top: 10%;
   left: 48%;
-  width: 30vw;
-  height: 30vw;
+  /* width: 30vw; */
+  width: 30vh;
+  /* height: 30vw; */
+  height: 30vh;
   max-width: 300px;
   max-height: 300px;
   border-radius: 7px;
   box-shadow: 0px 0px 5px gray;
   /* background-color: rgb(169, 192, 246); */
   z-index: 1;
-  background-image: url("src/images/chicken_Group.png");
+  /* background-image: url("src/images/chicken_Group.png"); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
