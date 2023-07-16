@@ -37,39 +37,39 @@ fetch(`${local_site}/apis/getBlogger/${bloggerID}`, {
 
 // Check if already in local storage
 
-if (localStorage.AllMapPositionUpdate == new Date().getDate() && localStorage.AllMapPosition) {
-  // if (1 == 1) {
-  console.log("\nFetching\n");
-  fetch(`${local_site}/apis/blogsItem/${bloggerID}`, {
-    headers: { "X-CSRFToken": csrftoken, Accept: "application/json", "Content-Type": "application/json" },
-    method: "GET",
-  })
-    .then((response) => response.json())
-    .then((blog) => {
-      flex_container = document.querySelector(".flexbox-container");
-      var AllMapPosition = [];
-      for (i in blog) {
-        x = new BlogMaker(blog[i]);
-        flex_container.append(x.mainContainer);
-        // Pushing Position
-        newPosition = { lat: parseFloat(blog[i]["latitude"]), lng: parseFloat(blog[i]["longitude"]) };
-        AllMapPosition.push(newPosition);
-      }
-      // localStorage.setItem("AllMapPosition", JSON.stringify(AllMapPosition));
+// if (localStorage.AllMapPositionUpdate == new Date().getDate() && localStorage.AllMapPosition) {
+// if (1 == 1) {
+console.log("\nFetching\n");
+fetch(`${local_site}/apis/blogsItem/${bloggerID}`, {
+  headers: { "X-CSRFToken": csrftoken, Accept: "application/json", "Content-Type": "application/json" },
+  method: "GET",
+})
+  .then((response) => response.json())
+  .then((blog) => {
+    flex_container = document.querySelector(".flexbox-container");
+    var AllMapPosition = [];
+    for (i in blog) {
+      x = new BlogMaker(blog[i]);
+      flex_container.append(x.mainContainer);
+      // Pushing Position
+      newPosition = { lat: parseFloat(blog[i]["latitude"]), lng: parseFloat(blog[i]["longitude"]) };
+      AllMapPosition.push(newPosition);
+    }
+    // localStorage.setItem("AllMapPosition", JSON.stringify(AllMapPosition));
 
-      localStorage.AllBlogItem = JSON.stringify(blog);
-      localStorage.AllMapPosition = JSON.stringify(AllMapPosition);
-      localStorage.AllMapPositionUpdate = new Date().getDate();
-      // AllMapPosition = JSON.parse(localStorage.AllMapPosition);
-    });
-} else {
-  var flex_container = document.querySelector(".flexbox-container");
-  allblogsitems = JSON.parse(localStorage.AllBlogItem);
-  for (i in allblogsitems) {
-    x = new BlogMaker(allblogsitems[i]);
-    flex_container.append(x.mainContainer);
-  }
-}
+    localStorage.AllBlogItem = JSON.stringify(blog);
+    localStorage.AllMapPosition = JSON.stringify(AllMapPosition);
+    localStorage.AllMapPositionUpdate = new Date().getDate();
+    // AllMapPosition = JSON.parse(localStorage.AllMapPosition);
+  });
+// } else {
+//   var flex_container = document.querySelector(".flexbox-container");
+//   allblogsitems = JSON.parse(localStorage.AllBlogItem);
+//   for (i in allblogsitems) {
+//     x = new BlogMaker(allblogsitems[i]);
+//     flex_container.append(x.mainContainer);
+//   }
+// }
 
 // CONSTRUCTOR
 // timestamp
